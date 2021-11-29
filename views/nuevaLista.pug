@@ -1,0 +1,13 @@
+extends layout
+include mixins/crearLista
+block contenido 
+    .contenido-principal 
+        h1 #{nombrePagina}
+
+        //- pre= vardump(lista)
+
+        if errores
+            each error in errores 
+                .alerta= error.texto
+        +crearLista(lista)
+        
