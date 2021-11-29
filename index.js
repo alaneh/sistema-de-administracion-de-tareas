@@ -7,7 +7,8 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('./config/passport');
-//helpers con algunas funciones
+require('dotenv').config({ path: 'variables.env' })
+    //helpers con algunas funciones
 const helpers = require('./helpers');
 
 //Crear la conexión a la BD
@@ -53,6 +54,7 @@ app.use(passport.session());
 app.use((req, res, next) => {
     res.locals.vardump = helpers.vardump;
     res.locals.mensajes = req.flash();
+    res.locals.usuario = {...req.user } || null;
     next();
 });
 
