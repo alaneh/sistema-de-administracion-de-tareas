@@ -1,4 +1,24 @@
 extends layout
 block contenido
     .contenido-principal 
-        h1 Mis listas
+        h1 Bienvenido al sistema de administración de tareas 
+        h3 Creado por: Elizalde Hernández Alan 5IV7 
+        h3 Materia: Introducción a los sistemas distribuidos
+        p Presiona click en menu para poder moverte entre tus distintas lista y / o agregar mas
+        a(href="https://github.com/alaneh/sistema-de-administracion-de-tareas") Repositorio de github 
+        h2 Instrucciones para correr el programa en local 
+        ul 
+            li Primero deberas hacer uso de git clone "Link del repositorio que genera github"
+            li Ahora deberás abrir la carpeta que genera "git clone" y modificar el package.json
+            li Deberas cambiar el "name" por el nombre de la carpeta que genera "git clone"
+            li Deberas de usar npm i para que genere todas las carpetas de node_modules 
+            li Crea una base de datos vacia con un nombre cualquiera
+            li Ahora, tienes que crear el archivo variables.env para poder correr el programa de forma local 
+            li En el archivo variables.env debe venir lo siguiente 
+                ol
+                    li BD_NOMBRE="Nombre de la base de datos"
+                    li BD_USER="Usuario de tu base de datos"
+                    li BD_PASS="Contraseña de tu base de datos"
+                    li BD_HOST="127.0.0.1" Esto es para que corrar en el localhost 3000
+            li Ahora abre la consola y escribe npm run desarrollo
+            li Listo ahora puedes correr tu programa
