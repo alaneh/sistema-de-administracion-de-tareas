@@ -63,13 +63,16 @@ body {
 }
 
 .campo {
+    width: 95%;
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
     align-items: center;
 }
 
 .campo label {
-    flex: 0 0 100px;
+    display: flex;
+    flex-wrap: wrap;
     text-align: right;
     padding-right: 1rem;
 }
@@ -79,11 +82,12 @@ body {
 .campo input[type="password"] {
     height: 3rem;
     border: 0;
-    flex: 1;
     border: 1px solid #455A64;
-    border-radius: 5rem;
+    border-radius: 10px;
     padding-left: 2rem;
     color: black;
+    width: 90%;
+    min-width: 250px;
 }
 
 .campo.acciones {
@@ -98,15 +102,16 @@ body {
     background-color: #d1f8ff;
     text-align: center;
     transition: background-color .5s ease-in-out;
-    padding: 2rem;
     text-transform: uppercase;
     border: none;
     font-weight: 900;
-    width: 250px;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 250px;
     display: flex;
     align-items: center;
-    line-height: 0;
+    justify-content: center;
 }
 
 .boton span {
@@ -142,10 +147,11 @@ body.index {
     background-color: #05305c;
     ;
     padding: 1rem;
-    height: 60px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .barra h1 {
@@ -164,9 +170,10 @@ body.index {
 
 .contenedor-proyectos {
     height: 100%;
-    max-width: 300px;
+    width: 90%;
     background-color: #3f678f;
     padding-top: 1rem;
+    text-align: center;
 }
 
 .panel {
@@ -221,6 +228,8 @@ body.index {
 .contenedor {
     display: flex;
     height: calc( 100vh - 60px);
+    width: 100%;
+    justify-content: center;
 }
 
 .contenido-principal {
@@ -250,6 +259,11 @@ body.index {
 .agregar-tarea {
     max-width: 800px;
     width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #05305c;
     margin: 0 auto;
     padding: 2rem;
@@ -358,24 +372,27 @@ form.agregar-proyecto {
     transition: background-color .5s ease-in-out;
 }
 
-form.agregar-proyecto label,
 form.agregar-proyecto input {
-    display: block;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 form.agregar-proyecto label {
-    flex: 0 0 150px;
+    display: flex;
     text-align: right;
     padding-right: 1rem;
 }
 
 form.agregar-proyecto input[type="text"] {
-    width: 100%;
     height: 3rem;
-    padding-left: 1rem;
+    border: 0;
     border: 1px solid #455A64;
-    border-radius: 5rem;
+    border-radius: 10px;
     color: black;
+    width: 90%;
+    min-width: 250px;
 }
 
 form input[type="submit"] {
@@ -394,6 +411,8 @@ form input[type="submit"] {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .contenedor-acciones .boton:first-of-type {
@@ -430,6 +449,10 @@ li {
     padding: 10px;
     border-radius: 3px;
     transition: 0.3s;
+    width: 100%;
+    text-align: center;
+    min-width: 100px;
+    max-width: 150px;
     color: rgb(255, 255, 255);
 }
 
@@ -441,14 +464,12 @@ li {
 .bcs {
     text-align: center;
     transition: background-color .5s ease-in-out;
-    padding: 2rem;
+    padding: 20px 15px;
     text-transform: uppercase;
     border: none;
     font-weight: 900;
     width: 250px;
-    line-height: 0;
     background-color: rgb(75, 20, 20);
-    padding: 10px;
     border-radius: 3px;
     transition: 0.3s;
     color: rgb(255, 255, 255);
@@ -457,4 +478,64 @@ li {
 .bcs:hover {
     background-color: rgb(255, 143, 143);
     color: black;
+}
+
+
+/*
+Modal, así como en quetzual
+*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+    background-color: #bebabac9;
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.boton2 {
+    background-color: #d1f8ff;
+    text-align: center;
+    transition: background-color .5s ease-in-out;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 900;
+    margin: 10px auto;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton2 span {
+    font-size: 2.2rem;
+    margin-left: 20px;
+}
+
+.boton2:hover {
+    cursor: pointer;
+    background-color: rgb(160, 227, 229)!important;
 }

@@ -6,17 +6,18 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/normalize.css")
         link(rel="stylesheet", href="/css/app.css")
-        script(src="https://kit.fontawesome.com/579fe2a44d.js" crossorigin="anonymous") 
+        script(src="https://kit.fontawesome.com/579fe2a44d.js" crossorigin="anonymous")
         title #{nombrePagina}
     body
         header.barra
             h1 SAT - Sistema de administración de tareas 
             a(href="/cerrar-sesion" class="cs") Cerrar sesión
-
-        main.contenedor 
+        button(class="boton" data-open="modalR") Abrir menu
+                
+        div#modalR.modal 
             aside.contenedor-proyectos 
                 .panel.crear-proyecto
-                    a(href="/nueva-Lista" class="boton") Nueva Lista
+                    a(href="/nueva-Lista" class="boton2") Nueva Lista
                         span +
                 .panel.lista-proyectos
                     h2 Mis listas
@@ -25,7 +26,7 @@ html(lang="en")
                             each lista in listas 
                                 li 
                                     a(href=`/listas/${lista.url}`)= lista.nombre
-            block contenido
+        block contenido
         
-        script(src="/dist/bundle.js") 
+    script(src="/dist/bundle.js") 
             //pre= vardump(listas)
